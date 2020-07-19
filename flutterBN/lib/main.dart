@@ -61,8 +61,11 @@ class CustomScrollViewWidget extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         SliverSafeArea(
+//         上下左右，都可以单独设置，是否需要安全间距，默认是有安全距离的
+//        bottom 设置为false ,就可以 在视图下面 拼接 其他视图，间距通过 SliverPadding 就可以完美控制好
+          bottom: false,
           sliver: SliverPadding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
             sliver: SliverGrid(
                 delegate: SliverChildBuilderDelegate((BuildContext bct, int index) {
                   return Container(
@@ -77,6 +80,19 @@ class CustomScrollViewWidget extends StatelessWidget {
                   mainAxisSpacing: 8,
                 )),
           ),
+        ),
+        SliverList(delegate: SliverChildBuilderDelegate(
+            (BuildContext bct,int index){
+              return Container(
+                height: 100,
+                color: Color.fromARGB(255, Random().nextInt(256),
+                    Random().nextInt(256), Random().nextInt(256)),
+                child: Text("baby $index",style: TextStyle(fontSize: 20),textAlign: TextAlign.center,),
+
+              );
+            },
+          childCount: 6,
+        ),
         ),
       ],
     );
