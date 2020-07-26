@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutterBN/RichText.dart';
-import 'package:flutterBN/ListBuild.dart';
+import 'package:flutterBN/prepare/RichText.dart';
+import 'package:flutterBN/prepare/ListBuild.dart';
 
 
 class DetailViewController extends StatelessWidget {
