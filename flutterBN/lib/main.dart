@@ -3,12 +3,39 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutterBN/douban/profile/my_info_viewmodel.dart';
+import 'package:provider/provider.dart';
 
 import 'douban/main/main.dart';
 
-
+/*
+provider使用：
+1.创建数据 -viewmodel
+2.应用程序顶层添加 ChangeNotifierProvider
+3.使用共享数据
+-3.1 Provide.of: 当Provider中饿数据发生改变的时候，Provider.of所在的widget整个build方法都会重新构建
+-3.2 Consumer（推荐）：当provider中的数据发生改变时，只会重新执行consumer的builder
+* */
+//
+//void main() {
+//  runApp(ChangeNotifierProvider(
+//    child: MyApp(),
+//    create: (bct) => YYUserInfoViewModel(),
+//  ));
+//}
 void main() {
-  runApp(MyApp());
+  runApp(MultiProvider(
+//    多个共享数据
+    providers: [
+      ChangeNotifierProvider(
+        create: (bct) => YYUserInfoViewModel(),
+      ),
+      ChangeNotifierProvider(
+        create: (bct) => YYUserInfoViewModel(),
+      ),
+    ],
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -19,9 +46,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-
       theme: ThemeData(
-
 //        rgba(79,137,255,1)
 //      主题色
         primarySwatch: Colors.red,
@@ -34,7 +59,5 @@ class MyApp extends StatelessWidget {
       ),
       home: YYMainPage(),
     );
-
   }
 }
-
