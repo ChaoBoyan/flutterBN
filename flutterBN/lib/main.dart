@@ -24,15 +24,17 @@ provider使用：
 //  ));
 //}
 void main() {
+  var userModel = YYUserInfoViewModel();
+  userModel.name = "yanchaobo";
   runApp(MultiProvider(
 //    多个共享数据
     providers: [
       ChangeNotifierProvider(
-        create: (bct) => YYUserInfoViewModel(),
+        create: (bct) => userModel,
       ),
-      ChangeNotifierProvider(
-        create: (bct) => YYUserInfoViewModel(),
-      ),
+//      ChangeNotifierProvider(
+//        create: (bct) => YYUserInfoViewModel(),
+//      ),
     ],
     child: MyApp(),
   ));

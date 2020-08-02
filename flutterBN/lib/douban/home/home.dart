@@ -26,7 +26,7 @@ class _YYHomePageState extends State<YYHomePage> {
 //      value.subjects.forEach((element) {
 ////        print(element.title);
 ////      });
-
+      Provider.of<YYUserInfoViewModel>(context,listen: false).name = value.title;
       setState(() {
         movies.addAll(value.subjects);
       });
@@ -35,10 +35,14 @@ class _YYHomePageState extends State<YYHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text("首页"),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: IconButton(icon: Icon(Icons.person), onPressed: (){
+          Provider.of<YYUserInfoViewModel>(context,listen: false).name = "更换我的name";
+        }),
       ),
       body: ListView.builder(
         itemBuilder: (bct, index) {

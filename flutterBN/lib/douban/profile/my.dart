@@ -10,8 +10,9 @@ class YYMyPage extends StatefulWidget {
 class _YYMyPageState extends State<YYMyPage> {
   @override
   Widget build(BuildContext context) {
+    print("YYMyPage_调用了build方法");
 //方式一
-    String userName = Provider.of<YYUserInfoViewModel>(context).name;
+//    String userName = Provider.of<YYUserInfoViewModel>(context).name;
 //    方式二 Consumer
     return Scaffold(
       appBar: AppBar(
@@ -23,6 +24,7 @@ class _YYMyPageState extends State<YYMyPage> {
 //      方式二
       child: Consumer<YYUserInfoViewModel>(
         builder: (bct,model,child){
+          print("YYMyPage_调用了Consumer局部刷新方法");
           return Text(model.name);
         },
       ),

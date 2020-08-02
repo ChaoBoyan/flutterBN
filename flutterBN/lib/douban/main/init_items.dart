@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutterBN/douban/group/group.dart';
 import 'package:flutterBN/douban/home/home.dart';
+import 'package:flutterBN/douban/mall/mall.dart';
 import 'package:flutterBN/douban/profile/my.dart';
+import 'package:flutterBN/douban/subject/subject.dart';
 
 import 'bottom_bar_item.dart';
 
@@ -15,8 +18,8 @@ List<YYBottomBarItem> items = [
 
 List<Widget> pages =  [
   YYHomePage(),
-  YYMyPage(),
-  YYMyPage(),
-  YYMyPage(),
+  YYSubject(),
+  YYGroup(),
+  YYMall(),
   YYMyPage(),
 ];
