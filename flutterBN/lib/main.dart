@@ -50,7 +50,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       routes: routes,
-      onGenerateRoute: ,
 //      路由钩子,使用场景，处理 没有路由的情况，错误处理
 //      onUnknownRoute: (settings){
 //        return MaterialPageRoute(builder: (ctx){
