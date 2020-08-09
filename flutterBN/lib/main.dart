@@ -3,10 +3,11 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutterBN/douban/home/homeAbout.dart';
 import 'package:flutterBN/douban/profile/my_info_viewmodel.dart';
 import 'package:provider/provider.dart';
-
 import 'douban/main/main.dart';
+import 'douban/main/router.dart';
 
 /*
 provider使用：
@@ -48,6 +49,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
+      routes: routes,
+      onGenerateRoute: ,
+//      路由钩子,使用场景，处理 没有路由的情况，错误处理
+//      onUnknownRoute: (settings){
+//        return MaterialPageRoute(builder: (ctx){
+//          return YYHomeAbout();
+//        }
+//        );
+//      },
       theme: ThemeData(
 //        rgba(79,137,255,1)
 //      主题色

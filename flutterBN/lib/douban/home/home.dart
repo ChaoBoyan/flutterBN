@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterBN/douban/home/homeDetail.dart';
 import 'package:flutterBN/douban/home/model/home_list_entity.dart';
 import 'package:flutterBN/douban/profile/my_info_viewmodel.dart';
 import 'package:flutterBN/service/home_request.dart';
@@ -49,10 +50,27 @@ class _YYHomePageState extends State<YYHomePage> {
           return ListTile(
             title: Text("${movies[index].title}"),
             leading: Image.network("${movies[index].images.small}",fit: BoxFit.cover,),
+            onTap: ()=>_jumpDetialPage(context),
           );
         },
         itemCount: movies.length,
       ),
     );
+  }
+
+  void _jumpDetialPage(BuildContext context){
+//    不接收 pop回来的返回值
+//    Navigator.of(context).push(MaterialPageRoute(builder: (context) => YYHomeDetialPage()));
+
+//  接收 ，pop返回带来的返回值
+//    Future result =  Navigator.of(context).push(MaterialPageRoute(builder: (context) => YYHomeDetialPage()));
+//    result.then((value){
+//      print(value);
+//    });
+//  通过路由 方式跳转
+//  Navigator.of(context).pushNamed(YYHomeDetialPage.rounterName);
+
+//  路由传参数
+    Navigator.of(context).pushNamed(YYHomeDetialPage.rounterName,arguments: "YYHome");
   }
 }
