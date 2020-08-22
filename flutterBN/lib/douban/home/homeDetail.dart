@@ -8,14 +8,14 @@ class YYHomeDetialPage extends StatefulWidget {
 }
 
 class _YYHomeDetialPageState extends State<YYHomeDetialPage> {
-
-
-
   @override
   Widget build(BuildContext context) {
+    print("检测 YYHomeDetialPage——pop的时候会rebuild");
 //  通过路由传过来的参数
-   final String _message = ModalRoute.of(context).settings.arguments;
-
+  final Map<String,String> map = ModalRoute.of(context).settings.arguments;
+   final String _message = map["a"];
+  print(map["a"]);
+  print(map["b"]);
 //    WillPopScope 监听 默认返回按钮 的点击事件
 //    onWillPop : Future.value(true) fullter默认返回 ；Future.value(false) 自定义返回事件
     return WillPopScope(
@@ -50,5 +50,11 @@ class _YYHomeDetialPageState extends State<YYHomeDetialPage> {
         ),
       ),
     );
+  }
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    print("YYHomeDetialPage_dispose");
+    super.dispose();
   }
 }

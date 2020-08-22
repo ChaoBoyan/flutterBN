@@ -23,15 +23,15 @@ class _YYHomePageState extends State<YYHomePage> {
     super.initState();
 
     print("----Home_initState()--");
-    YYHomeRequest.requestMovielist(0).then((value) {
-//      value.subjects.forEach((element) {
-////        print(element.title);
-////      });
-      Provider.of<YYUserInfoViewModel>(context,listen: false).name = value.title;
-      setState(() {
-        movies.addAll(value.subjects);
-      });
-    });
+//    YYHomeRequest.requestMovielist(0).then((value) {
+////      value.subjects.forEach((element) {
+//////        print(element.title);
+//////      });
+//      Provider.of<YYUserInfoViewModel>(context,listen: false).name = value.title;
+//      setState(() {
+//        movies.addAll(value.subjects);
+//      });
+//    });
   }
 
   @override
@@ -71,6 +71,6 @@ class _YYHomePageState extends State<YYHomePage> {
 //  Navigator.of(context).pushNamed(YYHomeDetialPage.rounterName);
 
 //  路由传参数
-    Navigator.of(context).pushNamed(YYHomeDetialPage.rounterName,arguments: "YYHome");
+    Navigator.of(context).pushNamed(YYHomeDetialPage.rounterName,arguments: {"a":"参数一","b":"参数二"});
   }
 }
