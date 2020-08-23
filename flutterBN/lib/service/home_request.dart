@@ -2,7 +2,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:flutterBN/douban/home/home_config.dart';
+import 'package:flutterBN/douban/home/model/home_config.dart';
 import 'package:flutterBN/douban/home/model/home_list_entity.dart';
 import 'package:flutterBN/generated/json/base/json_convert_content.dart';
 import 'package:flutterBN/generated/json/home_list_entity_helper.dart';
