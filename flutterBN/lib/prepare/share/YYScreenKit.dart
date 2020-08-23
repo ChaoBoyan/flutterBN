@@ -1,8 +1,6 @@
 
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
-
 class YYScreenKit {
 
   static  int standardSize = 750;
@@ -33,3 +31,4 @@ class YYScreenKit {
   }
 
 }
+
